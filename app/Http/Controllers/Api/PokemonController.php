@@ -16,7 +16,7 @@ class PokemonController extends Controller
      */
     public function get(Request $request)
     {
-        $pokemons = PokemonProfile::all();
+        $pokemons = PokemonProfile::orderBy('weight','desc')->paginate(5);
 
         return ["success" => true, "pokemons" => $pokemons];
     }

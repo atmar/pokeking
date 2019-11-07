@@ -18,6 +18,9 @@ window.Vue = require('vue');
 import router from './router'
 
 import MainContent from './components/layout/MainContent'
+import VueContentPlaceholders from 'vue-content-placeholders'
+
+Vue.use(VueContentPlaceholders)
 
 //Vue pages start with MainContent
 Vue.component('main-content', MainContent);

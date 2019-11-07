@@ -4,9 +4,12 @@
 
 @tailwind utilities;
 
+body {
+  background: #f7fafc;
+}
 
 #main-container {
-  margin-top: 170px;
+  margin: 170px 0px;
 }
 
 /* PRELOAD */
