@@ -36,27 +36,27 @@
           <tr v-for="n in 5" :key="n">
             <td class="border px-4 py-2">
               <content-placeholders>
-                <content-placeholders-text :lines="3" />
+                <content-placeholders-text :lines="4" />
               </content-placeholders>
             </td>
             <td class="border px-4 py-2">
               <content-placeholders>
-                <content-placeholders-text :lines="3" />
+                <content-placeholders-text :lines="4" />
               </content-placeholders>
             </td>
             <td class="border px-4 py-2">
               <content-placeholders>
-                <content-placeholders-text :lines="3" />
+                <content-placeholders-text :lines="4" />
               </content-placeholders>
             </td>
             <td class="border px-4 py-2">
               <content-placeholders>
-                <content-placeholders-text :lines="3" />
+                <content-placeholders-text :lines="4" />
               </content-placeholders>
             </td>
             <td class="border px-4 py-2">
               <content-placeholders>
-                <content-placeholders-text :lines="3" />
+                <content-placeholders-text :lines="4" />
               </content-placeholders>
             </td>
           </tr>
@@ -64,6 +64,10 @@
       </table>
 
       <paginate ref="paginate" :initialPage="page - 1" v-show="pokemons.last_page > 1" :pageCount="pokemons.last_page" :containerClass="'pagination w-full'" :clickHandler="changePage" />
+
+      <div class="pokeking mx-auto w-full text-center m-10">
+        <button @click="declarePokeking()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Declare PokeKing</button>
+      </div>
     </div>
   </div>
 </template>
@@ -97,7 +101,7 @@ export default {
       window.scrollTo(0, 0);
     },
     changePage(page) {
-      this.pokemons.data = []
+      this.pokemons.data = [];
       this.page = page;
       this.getData();
       this.scroll();

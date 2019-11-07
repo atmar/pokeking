@@ -34845,6 +34845,10 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -36154,7 +36158,7 @@ var render = function() {
                           "content-placeholders",
                           [
                             _c("content-placeholders-text", {
-                              attrs: { lines: 3 }
+                              attrs: { lines: 4 }
                             })
                           ],
                           1
@@ -36171,7 +36175,7 @@ var render = function() {
                           "content-placeholders",
                           [
                             _c("content-placeholders-text", {
-                              attrs: { lines: 3 }
+                              attrs: { lines: 4 }
                             })
                           ],
                           1
@@ -36188,7 +36192,7 @@ var render = function() {
                           "content-placeholders",
                           [
                             _c("content-placeholders-text", {
-                              attrs: { lines: 3 }
+                              attrs: { lines: 4 }
                             })
                           ],
                           1
@@ -36205,7 +36209,7 @@ var render = function() {
                           "content-placeholders",
                           [
                             _c("content-placeholders-text", {
-                              attrs: { lines: 3 }
+                              attrs: { lines: 4 }
                             })
                           ],
                           1
@@ -36222,7 +36226,7 @@ var render = function() {
                           "content-placeholders",
                           [
                             _c("content-placeholders-text", {
-                              attrs: { lines: 3 }
+                              attrs: { lines: 4 }
                             })
                           ],
                           1
@@ -36252,7 +36256,23 @@ var render = function() {
             containerClass: "pagination w-full",
             clickHandler: _vm.changePage
           }
-        })
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "pokeking mx-auto w-full text-center m-10" }, [
+          _c(
+            "button",
+            {
+              staticClass:
+                "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded",
+              on: {
+                click: function($event) {
+                  return _vm.declarePokeking()
+                }
+              }
+            },
+            [_vm._v("Declare PokeKing")]
+          )
+        ])
       ],
       1
     )
