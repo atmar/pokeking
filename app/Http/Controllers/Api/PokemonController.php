@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\PokemonProfile;
 
 class PokemonController extends Controller
 {
@@ -14,7 +16,7 @@ class PokemonController extends Controller
      */
     public function get(Request $request)
     {
-        $pokemons = PokemonsProfile::all();
+        $pokemons = PokemonProfile::all();
 
         return ["success" => true, "pokemons" => $pokemons];
     }
