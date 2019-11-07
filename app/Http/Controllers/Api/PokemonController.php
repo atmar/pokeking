@@ -20,4 +20,8 @@ class PokemonController extends Controller
 
         return ["success" => true, "pokemons" => $pokemons];
     }
+
+    public function getPokeKing(Request $request) {
+       
+    }
 }

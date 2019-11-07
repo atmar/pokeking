@@ -105,6 +105,9 @@ export default {
       this.page = page;
       this.getData();
       this.scroll();
+    },
+    declarePokeking() {
+      
     }
   }
 };
