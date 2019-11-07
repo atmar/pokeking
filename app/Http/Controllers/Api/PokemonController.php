@@ -16,12 +16,23 @@ class PokemonController extends Controller
      */
     public function get(Request $request)
     {
-        $pokemons = PokemonProfile::orderBy('weight','desc')->paginate(5);
+        $pokemons = PokemonProfile::select('sprites','name','base_experience','height','weight')
+        ->orderBy('weight','desc')
+        ->paginate(5);
 
         return ["success" => true, "pokemons" => $pokemons];
     }
 
+    /**
+     * Get the pokeking according to highest base stats
+     *
+     * @param Request $request
+     * @return void
+     */
     public function getPokeKing(Request $request) {
        
+        $pokeKing = PokemonProfile::orderBy('sum_base_stats','desc')->first();
+
+        return ["success" => true, "pokeking" => $pokeKing];
     }
 }

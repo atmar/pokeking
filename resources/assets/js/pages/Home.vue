@@ -22,46 +22,7 @@
 
         </tbody>
       </table>
-      <table v-else class="table-auto w-full h-64">
-        <thead>
-          <tr>
-            <th class="px-4 py-2">Sprite</th>
-            <th class="px-4 py-2">Name</th>
-            <th class="px-4 py-2">Base Experience</th>
-            <th class="px-4 py-2">Height</th>
-            <th class="px-4 py-2">Weight</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="n in 5" :key="n">
-            <td class="border px-4 py-2">
-              <content-placeholders>
-                <content-placeholders-text :lines="4" />
-              </content-placeholders>
-            </td>
-            <td class="border px-4 py-2">
-              <content-placeholders>
-                <content-placeholders-text :lines="4" />
-              </content-placeholders>
-            </td>
-            <td class="border px-4 py-2">
-              <content-placeholders>
-                <content-placeholders-text :lines="4" />
-              </content-placeholders>
-            </td>
-            <td class="border px-4 py-2">
-              <content-placeholders>
-                <content-placeholders-text :lines="4" />
-              </content-placeholders>
-            </td>
-            <td class="border px-4 py-2">
-              <content-placeholders>
-                <content-placeholders-text :lines="4" />
-              </content-placeholders>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <placeholder-table v-else />
 
       <paginate ref="paginate" :initialPage="page - 1" v-show="pokemons.last_page > 1" :pageCount="pokemons.last_page" :containerClass="'pagination w-full'" :clickHandler="changePage" />
 
@@ -73,11 +34,13 @@
 </template>
 
 <script>
-import Paginate from "./Paginate.vue";
+import Paginate from "../components/Paginate.vue";
+import PlaceholderTable from "../components/home/PlaceholderTable.vue";
 
 export default {
   components: {
-    Paginate
+    Paginate,
+    PlaceholderTable
   },
 
   mounted() {

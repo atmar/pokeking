@@ -80,6 +80,11 @@ class RetrievePokemonProfiles extends Command
             $pokemonProfile->types = $response->types;
             $pokemonProfile->weight = $response->weight;
 
+            // Pre-define the sum of base stats in a column to query for this value a lot faster
+            $pokemonProfile->sum_base_stats = collect($response->stats)->sum(function($stat) {
+                return $stat->base_stat;
+            });
+
             $pokemonProfile->save();
         }
     }

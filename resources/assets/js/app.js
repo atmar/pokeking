@@ -17,7 +17,7 @@ window.Vue = require('vue');
 
 import router from './router'
 
-import MainContent from './components/layout/MainContent'
+import MainContent from './layout/MainContent'
 import VueContentPlaceholders from 'vue-content-placeholders'
 
 Vue.use(VueContentPlaceholders)

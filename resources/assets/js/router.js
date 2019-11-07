@@ -10,7 +10,7 @@ export default new VueRouter({
   routes: [{
       name: 'Home',
       path: '/',
-      component: require('./components/Home.vue')
+      component: require('./pages/Home.vue')
     },
     {
       path: '*',
