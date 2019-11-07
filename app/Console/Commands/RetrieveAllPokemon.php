@@ -52,7 +52,7 @@ class RetrieveAllPokemon extends Command
         $response = file_get_contents($url);
         $response = json_decode($response);
 
-        
+        // Save pokemon results in DB
         foreach ($response->results as $result) {
             Pokemon::updateOrCreate([
                 "name" => $result->name,

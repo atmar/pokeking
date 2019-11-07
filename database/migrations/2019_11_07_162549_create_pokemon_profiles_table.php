@@ -19,16 +19,19 @@ class CreatePokemonProfilesTable extends Migration
             $table->json('abilities');
             $table->integer('base_experience');
             $table->json('forms');
+            $table->json('game_indices');
             $table->integer('height');
             $table->json('held_items');
             $table->boolean('is_default');
             $table->string('location_area_encounters');
             $table->json('moves');
+            $table->string('name');
+            $table->integer('order');
             $table->json('species');
             $table->json('sprites');
             $table->json('stats');
             $table->json('types');
-            $table->integer('weight');
+            $table->integer('weight')->index();
             $table->timestamps();
         });
     }
