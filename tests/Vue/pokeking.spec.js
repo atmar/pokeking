@@ -3,7 +3,7 @@ import {
 } from '@vue/test-utils'
 
 import moxios from 'moxios'
-import PokeKing from '../components/home/PokeKing.vue'
+import PokeKing from '../../resources/assets/js/components/home/PokeKing.vue'
 
 describe('PokeKing', () => {
   beforeEach(function () {
