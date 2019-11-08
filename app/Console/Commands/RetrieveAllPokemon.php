@@ -47,8 +47,14 @@ class RetrieveAllPokemon extends Command
         $this->retrievePokemons(self::POKEMON_URL);
     }
 
-    private function initializeBar()
+    /**
+     * Initalize the visualization bar
+     *
+     * @return void
+     */
+    private function initializeBar() : void
     {
+        // Get the amount of pokemon through count
         $response = file_get_contents(self::POKEMON_URL);
         $response = json_decode($response);
 
