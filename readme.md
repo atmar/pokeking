@@ -32,12 +32,17 @@ php artisan migrate
 ```
 ---
 
-Synchronize the pokemon data using the following commands in this order:
+Synchronize the pokemon data using the following commands:
 
 ```bash
 php artisan pokemon:retrieve
 php artisan pokemon:retrieve-profiles
 ```
+OR run this command
+```bash
+php artisan pokemon:sync
+```
+
 ---
 
 Install the frontend NPM libraries:
