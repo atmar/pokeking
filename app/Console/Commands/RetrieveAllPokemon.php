@@ -7,6 +7,10 @@ use App\Models\Pokemon;
 
 class RetrieveAllPokemon extends Command
 {
+    protected $bar;
+
+    const POKEMON_URL = "https://pokeapi.co/api/v2/pokemon";
+
     /**
      * The name and signature of the console command.
      *
@@ -38,7 +42,19 @@ class RetrieveAllPokemon extends Command
      */
     public function handle()
     {
-        $this->retrievePokemons("https://pokeapi.co/api/v2/pokemon");
+        $this->info("---- Starting Pokemon Retrieval ----");
+        $this->initializeBar();
+        $this->retrievePokemons(self::POKEMON_URL);
+    }
+
+    private function initializeBar()
+    {
+        $response = file_get_contents(self::POKEMON_URL);
+        $response = json_decode($response);
+
+        // Add a visual representation
+        $this->bar = $this->output->createProgressBar($response->count);
+        $this->bar->start();
     }
 
     /**
@@ -47,8 +63,8 @@ class RetrieveAllPokemon extends Command
      * @param string $url
      * @return void
      */
-    private function retrievePokemons(string $url) : void {
-
+    private function retrievePokemons(string $url) : void
+    {
         $response = file_get_contents($url);
         $response = json_decode($response);
 
@@ -60,8 +76,12 @@ class RetrieveAllPokemon extends Command
             ]);
         }
 
+        $this->bar->advance(20);
+
         if ($response->next) {
             $this->retrievePokemons($response->next);
+        } else {
+            $this->bar->finish();
         }
     }
 }

@@ -39,6 +39,7 @@ class RetrievePokemonProfiles extends Command
      */
     public function handle()
     {
+        $this->info("---- Starting Pokemon Profiles Retrieval ----");
         // Retrieve all pokemons, can use ::all() since the table is not that big
         $pokemons = Pokemon::all();
 
