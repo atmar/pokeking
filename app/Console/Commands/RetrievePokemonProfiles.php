@@ -42,9 +42,15 @@ class RetrievePokemonProfiles extends Command
         // Retrieve all pokemons, can use ::all() since the table is not that big
         $pokemons = Pokemon::all();
 
+        // Add a visual representation
+        $bar = $this->output->createProgressBar($pokemons->count());
+        $bar->start();
+
         foreach ($pokemons as $pokemon) {
             $this->retrieveProfile($pokemon->url);
+            $bar->advance();
         }
+        $bar->finish();
     }
 
     private function retrieveProfile(string $url) : void {
