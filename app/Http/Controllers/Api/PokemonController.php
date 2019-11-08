@@ -35,9 +35,9 @@ class PokemonController extends Controller
     public function getPokeKing(Request $request)
     {
         $pokeKing = Cache::tags(['pokemons'])->remember("pokeking", 60 * 24 * 1, function () {
-            return PokemonProfile::orderBy('sum_base_stats', 'desc')->first();
-        }
-    );
+            return PokemonProfile::select('sprites', 'name', 'stats', 'types')->orderBy('sum_base_stats', 'desc')->first();
+        });
+        
         return ["success" => true, "pokeking" => $pokeKing];
     }
 }
