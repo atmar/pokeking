@@ -6,7 +6,12 @@ import Paginate from '../../../resources/assets/js/components/pagination/Paginat
 
 describe('Paginate', () => {
   it('is a Vue instance', () => {
-    const wrapper = shallowMount(Paginate)
+    const wrapper = shallowMount(Paginate, {
+      propsData: {
+        pageCount: 1
+      }
+    })
     expect(wrapper.isVueInstance()).toBeTruthy()
+    expect(wrapper.props().pageCount).toBe(1)
   })
 })
