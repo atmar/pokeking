@@ -1,3 +1,6 @@
+import Vue from 'vue'
+Vue.config.silent = true;
+
 import {
   shallowMount
 } from '@vue/test-utils'
